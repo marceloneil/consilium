@@ -1,28 +1,16 @@
 <nav ng-controller="HeaderCtrl" class="navbar navbar-default navbar-static-top">
+  <a href="/"><img class="inline" src="Bowtie Logo.png" width="78px" height="60px"></a>
   <div class="container">
-    <div class="navbar-header">
-      <button type="button" data-toggle="collapse" data-target="#navbar" class="navbar-toggle collapsed">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">Project name</a>
-    </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li ng-class="{ active: isActive('/')}"><a href="/">Home</a></li>
-        <li ng-class="{ active: isActive('/contact')}"><a href="/contact">Contact</a></li>
-      </ul>
       <ul ng-if="isAuthenticated()" class="nav navbar-nav navbar-right">
         <li class="dropdown">
-          <a href="#" data-toggle="dropdown" class="navbar-avatar dropdown-toggle">
+          <a style="font-family: Open Sans, sans-serif" href="#" data-toggle="dropdown" class="navbar-avatar dropdown-toggle">
             <img ng-src="{{currentUser.picture || currentUser.gravatar}}"> {{currentUser.name || currentUser.email || currentUser.id}} <i class="caret"></i>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="/account">My Account</a></li>
+            <li><a href="/account" style="font-family: Open Sans, sans-serif">Edit my account</a></li>
             <li class="divider"></li>
-            <li><a href="#" ng-click="logout()"}>Logout</a></li>
+            <li><a href="#" ng-click="logout()" style="font-family: Open Sans, sans-serif">Logout</a></li>
           </ul>
         </li>
       </ul>

@@ -1,37 +1,13 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="panel">
-        <div class="panel-body">
-          <h3>Heading</h3>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-            condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-            Donec sed odio dui.</p>
-          <a href="#" role="button" class="btn btn-default">View details</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel">
-        <div class="panel-body">
-          <h3>Heading</h3>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-            condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-            Donec sed odio dui.</p>
-          <a href="#" role="button" class="btn btn-default">View details</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="panel">
-        <div class="panel-body">
-          <h3>Heading</h3>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-            condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-            Donec sed odio dui.</p>
-          <a href="#" role="button" class="btn btn-default">View details</a>
-        </div>
-      </div>
-    </div>
-  </div>
+<link rel="stylesheet" href="/css/w3.css">
+<div class="container-fluid" ng-controller="HomeCtrl">
+<div ng-repeat="advisor in advisors">
+  <figure class="snip1336">
+    <img src="http://www.win10themes.com/wp-content/uploads/2016/06/Snow-Wallpaper-HD.jpg" alt="sample87" />
+    <figcaption>
+      <img src="{{advisor.picture}}" alt="profile-sample4" class="profile" />
+      <h2>{{advisor.name}}<span>{{advisor.firm}}</span><span>{{advisor.designation}}</span></h2>
+      <a href="/profile/{{advisor._id}}" class="follow">Read Reviews</a>
+    </figcaption>
+  </figure>
+</div>
 </div>

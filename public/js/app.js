@@ -4,7 +4,8 @@ angular.module('MyApp', ['ngRoute', 'satellizer'])
 
     $routeProvider
       .when('/', {
-        templateUrl: 'partials/home.html'
+        templateUrl: 'partials/home.html',
+        controller: 'HomeCtrl'
       })
       .when('/contact', {
         templateUrl: 'partials/contact.html',
@@ -34,6 +35,10 @@ angular.module('MyApp', ['ngRoute', 'satellizer'])
         templateUrl: 'partials/reset.html',
         controller: 'ResetCtrl',
         resolve: { skipIfAuthenticated: skipIfAuthenticated }
+      })
+      .when('/profile/:id', {
+        templateUrl: 'partials/profile-page.html',
+        controller: 'ProfilePageCtrl'
       })
       .otherwise({
         templateUrl: 'partials/404.html'

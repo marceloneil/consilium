@@ -20,6 +20,7 @@ var User = require('./models/User');
 // Controllers
 var userController = require('./controllers/user');
 var contactController = require('./controllers/contact');
+var advisorController = require('./controllers/advisor');
 
 var app = express();
 
@@ -73,6 +74,12 @@ app.post('/auth/google', userController.authGoogle);
 app.get('/auth/google/callback', userController.authGoogleCallback);
 app.post('/auth/twitter', userController.authTwitter);
 app.get('/auth/twitter/callback', userController.authTwitterCallback);
+app.post('/advisor/new', advisorController.addAdvisor);
+app.post('/voice/:code', advisorController.voice);
+app.get('/advisor/get', advisorController.getAdvisor);
+app.get('/advisor/claim1', userController.ensureAuthenticated, advisorController.claimAdvisor1);
+app.get('/advisor/claim2', userController.ensureAuthenticated, advisorController.claimAdvisor2);
+app.post('/advisor/review', userController.ensureAuthenticated, advisorController.addReview);
 
 app.get('*', function(req, res) {
   res.redirect('/#' + req.originalUrl);
